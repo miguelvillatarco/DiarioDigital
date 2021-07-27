@@ -1,0 +1,17 @@
+
+<?page title="DIARIODIGITAL" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Error Login" border="normal">
+
+
+  <div>
+	<a href="index.zul">
+	<image src="/img/flecha.png" width="30px" height="30px" />
+
+	</a>
+	<label>Error Login</label>
+  </div>
+
+
+</window>
+</zk>

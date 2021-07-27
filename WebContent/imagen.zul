@@ -1,0 +1,36 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+	<window title="CargarNoticia" border="normal" id="crud" apply="org.zkoss.bind.BindComposer, noticia.clsNoticiaCrudComposer"
+      width="800px" height="auto"  minimizable="true" mode="modal" maximizable="truee" closable="true" position="center">
+		
+    <button label="Upload Image" upload="true,maxsize=300">
+        <attribute name="onUpload"><![CDATA[
+            org.zkoss.util.media.Media media = event.getMedia();
+            if (media instanceof org.zkoss.image.Image) {
+                org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+                image.setContent(media);
+                image.setParent(pics);
+            } else {
+                Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+                break;
+            }
+        ]]></attribute>
+    </button>
+    <separator />
+    <vlayout id="pics" height="360px" style="overflow:auto" />
+    
+    <button label="Download  Image">
+    <attribute name="onClick"><![CDATA[
+        Filedownload.save(media);
+    ]]></attribute>
+    </button>
+    
+    <separator />
+    
+    <button label="VolverParaCargarlaNoticia" href="javascript:window.history.back();"></button>
+    
+    
+ </window>
+    
+</zk>

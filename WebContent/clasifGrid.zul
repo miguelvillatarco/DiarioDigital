@@ -1,0 +1,43 @@
+<?page title="PAW 2017 Example 6" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+   
+    <window title="Clasificados" border="normal"
+        apply="org.zkoss.bind.BindComposer, modeloClasificados.clsClasifListComposer" 
+        viewModel="@id('vm') @init('modeloClasificados.clsClasifVM2')">
+        <div>
+            <button label="Agregar" id="add" image="/img/add.png" width="80px" height="35px"/>
+        </div>
+        <separator />
+		
+        <listbox id="clasifLB" model="@load(vm.allClasificados)"
+            selectedItem="@bind(vm.clasifSelected)">
+            <listhead sizable="true">
+                <listheader label="ID" width="100px" sort="auto(id)" />
+                <listheader label="tipoclasificado" width="200px" sort="auto(tipoClasificado)" />
+                <listheader label="Description" width="300px" sort="auto(description)" />
+                <listheader label="fecha" width="300px" sort="auto(fecha)" />
+                <listheader label="Imagen" width="200px" sort="auto(icon)" />
+                <listheader label="Actions" />
+            </listhead>
+            <template name="model" var="elemento">
+                <listitem>
+                    <listcell label="@load(element.id)" />
+                    <listcell label="@load(element.tipoClasificado)" />
+                    <listcell label="@load(element.descripcion)" />
+                     <listcell label="@load(element.fecha)" />
+                    <listcell label="@load(element.icon)" />
+                    <listcell>
+                        <hbox spacing="15px">
+                            <image sclass="imageDelete"
+                                onClick="@command('delete')" />
+                            <image sclass="imageEdit"
+                                onClick="@command('edit')" />
+                        </hbox>
+                    </listcell>
+                </listitem>
+            </template>
+        </listbox>
+       </window>
+      
+</zk>

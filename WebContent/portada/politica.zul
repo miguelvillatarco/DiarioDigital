@@ -1,0 +1,90 @@
+<?page title="Política" contentType="text/html;charset=UTF-8"?>
+<zk >
+
+
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('modeloNoticias.clsTitulos')">
+	
+ <borderlayout sclass="Politica" height="1200px"	style="position:relative;background:#000000"> 
+	
+    <north title=""  size="403px" border="0">
+        <borderlayout>
+            <west  size="33%" flex="true" maxsize="250" >
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=72"/>
+                </div>
+            </west>
+            <center flex="true">
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=73"/>
+                </div>
+            </center>
+            <east size="33%" border="none" flex="true">
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=80"/>
+                </div>
+            </east>
+        </borderlayout>
+        
+    </north>
+    <center >
+        <borderlayout>
+            <west maxsize="600" size="33%" flex="true" border="0" splittable="true">
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=75"/>
+                </div>
+            </west>
+            <center>
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=76"/>
+                </div>
+            </center>
+            <east  size="33%" >
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=78"/>
+                </div>
+            </east>
+        </borderlayout>
+        
+    </center>
+    
+     <south size="399px" border="0">
+         <borderlayout>
+            <west maxsize="600" size="33%">
+                <div >
+                    <include  src="prevsouth.zul?p=79"/>
+                </div>
+            </west>
+            <center>
+                <div >
+                    
+                       <include  src="prevsouth.zul?p=74"/>
+                </div>
+            </center>
+            <east  size="33%" >
+                <div >
+                    
+                        <!--     <include  src="prevsouth.zul?p=26"/>-->
+                </div>
+               
+            </east>
+        </borderlayout>
+        
+    </south>
+  
+</borderlayout>     	
+            	   
+	     
+ <vbox style="position:relative;margin-top:150px;margin-left:10px">
+	
+</vbox> 
+
+</window>
+
+
+</zk>

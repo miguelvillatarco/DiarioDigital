@@ -1,0 +1,52 @@
+
+<?page title="PAW 2017 Example 6" contentType="text/html;charset=UTF-8"?>
+<zk>
+    <window title="User Type CRUD" border="normal" id="crud"
+        width="430px" height="auto" apply="org.zkoss.bind.BindComposer, codigo.clsUserTypeCrudComposer"
+        minimizable="false" mode="modal" maximizable="false" closable="true" position="center"
+        viewModel="@id('vm') @init('codigo.clsUserTypeCrudVM')">
+        <separator />
+        <label value="User Type Information" />
+        <separator />
+        <panel width="100%">
+            <panelchildren>
+                <separator />
+                <grid width="99.5%">
+                    <columns>
+                        <column label="" width="150px" />
+                        <column label="" />
+                    </columns>
+                    <rows>
+                        <row>
+                            <hbox>
+                                <label value="Id" />
+                            </hbox>
+                            <textbox name="id"
+                                value="@bind(vm.selected.id)" cols="20" />
+                        </row>
+                        <row>
+                            <hbox>
+                                <label value="User Type" />
+                            </hbox>
+                            <textbox name="userType"
+                                value="@bind(vm.selected.userType)" cols="20" />
+                        </row>
+                        <row>
+                            <hbox>
+                                <label value="Description" />
+                            </hbox>
+                            <textbox name="description"
+                                value="@bind(vm.selected.description)" cols="20" />
+                        </row>
+
+                    </rows>
+                </grid>
+            </panelchildren>
+        </panel>
+        <separator />
+        <div align="center">
+            <button id="submit" label="Submit" onClick="@command('save')" />
+            <button id="cancel" label="Cancel" /> <!-- onClick="@command('closeThis')" -->
+        </div>
+    </window>
+</zk>

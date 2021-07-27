@@ -1,0 +1,31 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer	,usuarios.clsUserListComposer,org.zkoss.essentials.chapter8.LoginController" >	
+		<vbox hflex="min" align="right" style="position:relative;margin-left:70%;margin-top:-77px">
+		<vbox>
+					<grid hflex="min">
+						<columns>
+							<column hflex="min" align="right" />
+							<column />
+						</columns>
+						<rows>
+							<row>
+								Account :
+								<textbox id="account" width="200px"/>
+							</row>
+							<row>
+								Password :
+								<textbox id="password" type="password"
+									width="200px" />
+							</row>
+						</rows>
+					</grid>
+					<label id="message" sclass="warn" value="&#160;" />
+					<button id="login" label="Login" />
+					
+				</vbox>
+		</vbox>
+		
+
+</window>
+</zk>

@@ -1,0 +1,181 @@
+<?page title="Titulos" contentType="text/html;charset=UTF-8"?>
+<zk >
+
+
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('modeloNoticias.clsTitulos')">
+
+ 
+ <borderlayout sclass="titulos" height="1200px"	style="position:relative;background:#000000"> 
+	
+    <north  size="403px" border="0">
+        <borderlayout>
+            <west  size="33%" flex="true" maxsize="250" >
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=81"/>
+                </div>
+            </west>
+            <center flex="true">
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=80"/>
+                </div>
+            </center>
+            <east size="33%" border="none" flex="true">
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=79"/>
+                </div>
+            </east>
+        </borderlayout>
+        
+    </north>
+    <center >
+        <borderlayout>
+            <west maxsize="600" size="33%" flex="true" border="0" splittable="true">
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=78"/>
+                </div>
+            </west>
+            <center>
+                <div >
+                    
+                        <include  src="prevleft.zul?p=77"/>
+                </div>
+            </center>
+            <east  size="33%" >
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=76"/>
+                </div>
+            </east>
+        </borderlayout>
+        
+    </center>
+    
+     <south size="399px" border="0">
+         <borderlayout>
+            <west maxsize="600" size="33%" flex="true" border="0" splittable="true">
+                <div >
+                    <include  src="prevsouth.zul?p=75"/>
+                </div>
+            </west>
+            <center>
+                <div >
+                    
+                        <include  src="prev.zul?p=74"/>
+                </div>
+            </center>
+            <east  size="33%" >
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=73"/>
+                </div>
+               
+            </east>
+        </borderlayout>
+        
+    </south>
+  
+</borderlayout>     	
+ 
+ <toolbar sclass="nav_toolbar" >	
+</toolbar>
+ 
+ <html>     	   
+		<vbox align="left" pack="center" hflex="1" vflex="1" height="15px"	style="position:relative;margin-left:5px"> 
+		<a href="/DiarioDigital/deportes.zul">
+			<font face="univers" color="#ABB2B9"> 
+          		<h1>TE PUEDE INTERESAR </h1>
+ 			</font> 
+		</a>	
+		</vbox>            	   
+ </html>   
+ 
+ <toolbar sclass="nav_toolbar" >	
+</toolbar>
+            	
+  <borderlayout sclass="deportes" height="1200px"	style="position:relative;background:#000000"> 
+	
+    <north title=""  size="403px" border="0">
+        <borderlayout>
+            <west  size="33%" flex="true" maxsize="250" >
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=72"/>
+                </div>
+            </west>
+            <center flex="true">
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=71"/>
+                </div>
+            </center>
+            <east size="33%" border="none" flex="true">
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=70"/>
+                </div>
+            </east>
+        </borderlayout>
+        
+    </north>
+    <center >
+        <borderlayout>
+            <west maxsize="600" size="33%" flex="true" border="0" splittable="true">
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=69"/>
+                </div>
+            </west>
+            <center>
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=45"/>
+                </div>
+            </center>
+            <east  size="33%" >
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=44"/>
+                </div>
+            </east>
+        </borderlayout>
+        
+    </center>
+    
+     <south size="405px" border="0">
+         <borderlayout>
+            <west maxsize="600" size="33%"  >
+                <div >
+                    <include  src="prevsouth.zul?p=43"/>
+                </div>
+            </west>
+            <center>
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=42"/>
+                </div>
+            </center>
+            <east  size="33%" >
+                <div >
+                    
+                        <include  src="prevsouth.zul?p=41"/>
+                </div>
+               
+            </east>
+        </borderlayout>
+        
+    </south>
+  
+</borderlayout>  
+
+
+ 	<vbox style="position:relative;margin-top:100px;margin-left:10px">
+	
+	</vbox>             	
+
+</window>
+
+</zk>

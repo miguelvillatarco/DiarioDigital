@@ -1,0 +1,93 @@
+<?init class="org.zkoss.essentials.chapter8.AuthenticationInit"?>
+<!-- authentication init have to locate before composition -->
+<?page title="Clasificados" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+   
+    
+<window apply="org.zkoss.bind.BindComposer  " viewModel="@id('vm') @init('modeloNoticias.clsTitulos')">
+	
+ <borderlayout sclass="Clasificados" height="1200px"	style="position:relative;background:#000000"> 
+	
+    <north title=""  size="403px" border="0">
+        <borderlayout>
+            <west  size="33%" flex="true" maxsize="250" >
+                <div >
+                    
+                        <include  src="clasIzq.zul?p=63"/>
+                </div>
+            </west>
+            <center flex="true">
+                <div >
+                    
+                        <include  src="clasIzq.zul?p=64"/>
+                </div>
+            </center>
+            <east size="33%" border="none" flex="true">
+                <div >
+                    
+                        <include  src="clasIzq.zul?p=65"/>
+                </div>
+            </east>
+        </borderlayout>
+        
+    </north>
+    <center >
+        <borderlayout>
+            <west maxsize="600" size="33%" flex="true" border="0" splittable="true">
+                <div >
+                    
+                        <include  src="clasIzq.zul?p=66"/>
+                </div>
+            </west>
+            <center>
+                <div >
+                    
+                        <include  src="clasIzq.zul?p=67"/>
+                </div>
+            </center>
+            <east  size="33%" >
+                <div >
+                    
+                        <include  src="clasIzq.zul?p=68"/>
+                </div>
+            </east>
+        </borderlayout>
+        
+    </center>
+    
+     <south size="399px" border="0">
+         <borderlayout>
+            <west maxsize="600" size="33%">
+                <div >
+              <!--      <include  src="clasIzq.zul?p=7"/> --> 
+                </div>
+            </west>
+            <center>
+                <div >
+                    
+                   <!--      <include  src="clasIzq.zul?p=8"/> --> 
+                </div>
+            </center>
+            <east  size="33%" >
+                <div >
+                    
+                    <!--     <include  src="clasIzq.zul?p=9"/> --> 
+                </div>
+               
+            </east>
+        </borderlayout>
+        
+    </south>
+  
+</borderlayout>     	
+            	   
+	     
+ 	<vbox style="position:relative;margin-top:100px;margin-left:10px">
+	
+	</vbox> 
+
+</window>
+            
+      
+</zk>

@@ -1,0 +1,57 @@
+<!-- protect page by the authentication init  -->
+<?init class="org.zkoss.essentials.chapter8.AuthenticationInit"?>
+<!-- authentication init have to locate before composition -->
+<?page title="Noticias" contentType="text/html;charset=UTF-8"?>
+
+
+<zk>
+    <window title="Listado de todas las Noticias" border="normal" 
+        apply="org.zkoss.bind.BindComposer, noticia.clsNoticiaListComposer" viewModel="@id('vm') @init('noticia.clsNoticiaVM2')">
+        <div>
+            <button label="Agregar Noticia" id="add" image="/img/add.png"/>
+        </div>
+        <separator />
+
+        <listbox id="noticiaLB" model="@load(vm.allNoticia)"
+            selectedItem="@bind(vm.noticiaSelected)" >
+            <listhead sizable="true">
+                <listheader label="ID" width="50px" sort="auto(idnoticia)" />
+                <listheader label="	Titulo" width="100px" sort="auto(titulo)" />
+                <listheader label="Copete" width="200px" sort="auto(copete)" />
+                <listheader label="Cuerpo" width="500px" sort="auto(cuerpo)" />
+                <listheader label="Genero" width="70px" sort="auto(genero)" />
+                <listheader label="Imagen" width="50px" sort="auto(imagen)" />
+                <listheader label="Fecha" width="80px" sort="auto(fecha)" />
+                <listheader label="Epigrafe" width="100px" sort="auto(epigrafe)" />
+            <!--<listheader label="video" width="50px" sort="auto(video)" />--> 
+                 <listheader label="Actions" />
+            </listhead>
+            <template name="model" var="element">
+                <listitem>
+                    <listcell label="@load(element.idnoticia)" />
+                    <listcell label="@load(element.titulo)" />
+                    <listcell label="@load(element.copete)" />
+                    <listcell label="@load(element.cuerpo)" />
+                    <listcell label="@load(element.genero)" />
+                    <listcell label="@load(element.imagen)" />
+                    <listcell label="@load(element.fecha)" />
+                    <listcell label="@load(element.epigrafe)" />
+                  <!--<listcell label="@load(element.video)" />--> 
+                    <listcell>
+                        <hbox spacing="15px">
+                            
+                            <image sclass="imageEdit"
+                                onClick="@command('edit')" />
+                             <image sclass="imageDelete"
+                                onClick="@command('delete')" />
+                        </hbox>
+                    </listcell>
+                </listitem>
+            </template>
+        </listbox>
+        
+            <vbox style="position:relative;margin-top:150px;margin-left:10px">
+	
+</vbox>
+    </window>
+</zk>

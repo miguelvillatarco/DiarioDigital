@@ -1,0 +1,50 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+  <window title="Register" border="normal" id="crud"
+        width="430px" height="auto" apply="org.zkoss.bind.BindComposer, portada.clsPortadaCrudComposer"
+        minimizable="false" mode="modal" maximizable="false" closable="true" position="center"
+        viewModel="@id('vm') @init('portada.clsRegistrar')">
+        <separator />
+        <label value="Portada Information" />
+        <separator />
+        <panel width="100%">
+            <panelchildren>
+                <separator />
+                <grid width="99.5%">
+                    <columns>
+                        <column label="" width="150px" />
+                        <column label="" />
+                    </columns>
+                    <rows>
+                        <row>
+                            <hbox>
+                                <label value="Id" />
+                            </hbox>
+                            <textbox name="id" 
+                                value="@bind(vm.selected.idportada)" cols="20" />
+                        </row>
+                        <row>
+                            <hbox>
+                                <label value="IdNoticia" />
+                            </hbox>
+                            <textbox name="IdNoticia" constraint="no empty: Ingrese apellido "
+                                value="@bind(vm.selected.idnoticia)" cols="20" />
+                        </row>
+                        <row>
+                            <hbox>
+                                <label value="Fecha" />
+                            </hbox>
+                            <textbox name="Fecha" constraint="no empty: Ingrese nombre"
+                                value="@bind(vm.selected.fecha)" cols="20" />
+                        </row>
+                    </rows>
+                </grid>
+            </panelchildren>
+        </panel>
+        <separator />
+        <div align="center">
+            <button id="submit" label="Submit" onClick="@command('save')" />
+            <button id="cancel" label="Cancel" /> <!-- onClick="@command('closeThis')" -->
+        </div>
+    </window>
+</zk>

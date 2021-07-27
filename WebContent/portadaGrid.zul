@@ -1,0 +1,44 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+    <window title="Ultimas List" border="normal" contentStyle="overflow:auto"
+        apply="org.zkoss.bind.BindComposer, portada.clsPortadaListComposer" viewModel="@id('vm') @init('portada.clsPortadaVM2')">
+        <div>
+            <button label="Add" id="add" image="/img/add.png"/>
+        </div>
+        <separator />
+
+        <listbox id="portadaLB" model="@load(vm.allPortada)"
+            selectedItem="@bind(vm.portadaSelected)" >
+            <listhead sizable="true">
+                <listheader label="IDPortada" width="100px" sort="auto(idportada)" />
+                <listheader label="	IdNoticia" width="100px" sort="auto(idnoticia)" />
+                <listheader label="Fecha" width="100px" sort="auto(fecha)" />
+                 <listheader label="Actions" />
+            </listhead>
+            <template name="model" var="element">
+                <listitem>
+                    
+                    <listcell label="@load(element.idportada)" />
+                    <listcell label="@load(element.idnoticia)" />
+                    <listcell label="@load(element.fecha)" />
+                   
+                    <listcell>
+                        <hbox spacing="15px">
+                            <image sclass="imageDelete"
+                                onClick="@command('delete')" />
+                            <image sclass="imageEdit"
+                                onClick="@command('edit')" />
+                        </hbox>
+                    </listcell>
+                </listitem>
+            </template>
+        </listbox>
+        
+	</window>
+</zk>
+
+
+
+
+

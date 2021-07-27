@@ -1,0 +1,35 @@
+<?page title="ACTIVIDAD DE USUARIO" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+  <window title="Actividades del Usuario" border="normal"
+        apply="org.zkoss.bind.BindComposer"  viewModel="@id('vm') @init('actividadUsuario.clsActUsuarioVM')">
+       
+        <separator />
+		
+        <listbox id="actuser" model="@load(vm.allActUsuario)" selectedItem="@bind(vm.actUsuarioSelected)">
+            <listhead sizable="true">
+                <listheader label="ID" width="30px" sort="auto(id)" />
+              
+                <listheader label="usuario" width="250px" sort="auto(usuario)" />
+                <listheader label="genero" width="200px" sort="auto(genero)" />
+                <listheader label="titulo" width="600px" sort="auto(titulo)" />
+                <listheader label="Fecha" width="200px" sort="auto(fecha)" />
+              
+             
+            </listhead>
+            <template name="model" var="element">
+                <listitem>
+                    <listcell label="@load(element.id )" />
+                    <listcell label="@load(element.usuario)" />
+                    <listcell label="@load(element.genero)" />
+                    <listcell label="@load(element.titulo)" />
+                    <listcell label="@load(element.fecha)" />
+                  
+                </listitem>
+            </template>
+        </listbox>
+       </window>
+
+
+
+</zk>

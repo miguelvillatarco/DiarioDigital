@@ -1,0 +1,68 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+
+
+@media screen and (min-width:951px) {
+	.titulo1{
+		font-size:60px !important;
+		z-index:1;
+		font-family:'Open Sans Condensed',sans-serif;
+		opacity:0.8;	
+		z-index:9;
+		margin-top:40px;
+		color:#FFFFFF;
+		margin-left:30%;
+		-webkit-text-fill-color: #FFFFFF;
+		-webkit-text-stroke: 0.5px black;
+		
+		
+	}
+	.pie1{
+		font-size:18px ;
+		margin-left:75px;
+		margin-top:3px;
+	}
+	.copete1{
+		font-size:18px ;
+		z-index:1;
+		color:#000000;
+		font-family:'Open Sans Condensed',sans-serif;
+		background:#FFFFFF;
+		opacity:0.8;
+		position:absolute;
+		
+		z-index:6;
+		margin-top:300px;
+		margin-left:74px;
+		
+		
+		}
+}
+
+</style>
+
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('modeloNoticias.vistPrevia')"  height = "auto" >
+	 <a href="/noticias/noticia.zul?p=${param.p}">
+	<div style=" padding:0px;position;relative" >
+		<vbox >
+			<label sclass="pie1" value="@load(vm.seccion)" style="z-index:1;color:#ff0000;font-family:'Open Sans Condensed',sans-serif;background:#FFFFFF;opacity:0.8;position:absolute;width:100;z-index:6;"/>
+    			<label sclass="titulo1" value="@bind(vm.titulo)" style="position:absolute;color:#FFFFFF;width:80%;margin-left:90px;font-size:80px;background:;"/>   
+    		<label sclass="copete1"  value="@bind(vm.copete)"  style="font-size:28px ;z-index:1;color:#000000;font-family:'Open Sans Condensed',sans-serif;background:#FFFFFF;opacity:0.8;position:absolute;width:60%;z-index:6;"/>   
+		</vbox>
+		
+		<div style="position;absolute" >
+    		
+    		<image src="@load(vm.imagen)" style="position:absolute;margin-left:73px;width:70%;height:50%;z-index:4;"></image> 
+   
+    	</div>
+    	
+    	            	
+    </div>
+    
+    
+    
+    </a>
+</window>
+</zk>

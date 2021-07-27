@@ -1,0 +1,99 @@
+<?page title="Diario Digital" contentType="text/html;charset=UTF-8"?>
+<zk>
+ <style>    
+
+        .imageEdit 
+        { 
+            width: 50px; background-image: url('./img/edit.png'); 
+            background-repeat: no-repeat;
+            border: 0 none; 
+            cursor: pointer; 
+        }
+
+
+        .imageDelete 
+        { 
+            width: 50px; background-image: url('./img/delete.png'); 
+            background-repeat: no-repeat; 
+            border: 0 none; 
+            cursor: pointer; 
+        }
+        .contenido
+        { 
+            width: 500px;
+            height: 300px;   
+            border: 0 none; 
+            cursor: pointer; 
+        }
+        div@conteido{
+           margin:auto;
+           width: 400px;
+            height:600px;
+        }
+         .z-menu-content,	.z-menuitem-content{
+    		color:#000000;
+    	
+    	}
+    	.cabecera{
+    		  margin-top:-58px;
+    		  margin-right:15px;
+    		
+    	}
+    	 
+        
+        
+    </style>
+    
+<style src="/widgets/zk_calendar/zk_calendar/style.css" />
+
+ <window id="main" border="" width="100%" height="200%" >
+ 	
+ <!--  	<html>
+ 	<body>
+ 	
+			
+
+<script type="text/javascript"><![CDATA[
+			window.setInterval (BlinkIt, 500);
+			var color = "red";
+			function BlinkIt () {
+			var blink = document.getElementById ("blink");
+			color = (color == "#ffffff")? "red" : "#ffffff";
+			blink.style.color = color;
+			blink.style.fontSize='36px';}
+			]]></script>
+<div id="blink">Hola!</div>
+<div id="blink" onclick="parent.location='http://localhost:8080/DiarioDigital/index.zul'">
+Hola!</div>
+
+
+</body>
+ 	
+ 	</html>-->
+ 	
+ 	
+ 	<borderlayout sclass="cabecera" height="16%"> 
+		<north id="cabecera" >
+           	<include  src="/portada/cabecera.zul"/>
+     	</north>
+ 	</borderlayout> 
+	
+ <toolbar sclass="nav_toolbar" >	
+</toolbar>
+ 		
+	<borderlayout id="mainlayout" >
+	
+	<center	border="none"  autoscroll="true">
+		
+		    <include id="centerPage" src="/portada/titulos.zul"/>
+		    
+	</center>	
+		
+		
+	</borderlayout>
+
+
+	  </window>	
+	  
+	</zk>	  
+	  

@@ -1,0 +1,50 @@
+<!-- protect page by the authentication init  -->
+<?init class="org.zkoss.essentials.chapter8.AuthenticationInit"?>
+<!-- authentication init have to locate before composition -->
+<?page title="PAW 2017 Example 6" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+    
+    <window title="Lista de Usuarios CRUD(Crear, Leer, Actualizar y Borrar) " border="normal" 
+        apply="org.zkoss.bind.BindComposer, usuarios.clsUserListComposer " viewModel="@id('vm') @init('usuarios.clsUserVM2')">
+        <div>
+            <button label="Agregar Usuario" id="add" image="/img/add.png"/>
+        </div>
+        <separator />
+
+        <listbox id="userLB" model="@load(vm.allUser)"
+            selectedItem="@bind(vm.userSelected)">
+            <listhead sizable="true">
+                <listheader label="ID" width="50px" sort="auto(id)" />
+                <listheader label="Apellido" width="100px" sort="auto(apellido)" />
+                <listheader label="Nombre" width="100px" sort="auto(nombre)" />
+                <listheader label="Usuario" width="200px" sort="auto(email)" />
+                <listheader label="Tipo de Usuario" width="100px" sort="auto(tipo)" />
+                <listheader label="Celular" width="100px" sort="auto(celular)" />
+                <listheader label="Dirección" width="200px" sort="auto(direccion)" />
+                <listheader label="Contraseña" width="100px" sort="auto(password)" />
+                <listheader label="Acciones" />
+            </listhead>
+            <template name="model" var="element">
+                <listitem>
+                    <listcell label="@load(element.id)" />
+                    <listcell label="@load(element.apellido)" />
+                    <listcell label="@load(element.nombre)" />
+                    <listcell label="@load(element.email)" />
+                    <listcell label="@load(element.tipo)" />
+                    <listcell label="@load(element.celular)" />
+                    <listcell label="@load(element.direccion)" />
+                    <listcell label="@load(element.password)" />
+                    <listcell>
+                        <hbox spacing="15px">
+                            <image sclass="imageDelete"
+                                onClick="@command('delete')" />
+                            <image sclass="imageEdit"
+                                onClick="@command('edit')" />
+                        </hbox>
+                    </listcell>
+                </listitem>
+            </template>
+        </listbox>
+    </window>
+</zk>

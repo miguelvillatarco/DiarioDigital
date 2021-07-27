@@ -1,0 +1,46 @@
+<?page title="Cabecera1" contentType="text/html;charset=UTF-8"?>
+<zk>
+<?link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet"?>
+<style>
+ @media screen and (max-width: 3000px) {
+ 	.titulo3{
+		width:300px;
+		height:100px;
+		margin-top:-10px;
+		
+		z-index:0;	
+		font-size: 60px;
+	}
+	
+}
+
+
+}
+</style>
+<window apply="org.zkoss.essentials.chapter8.LogoutController">	
+    
+	
+
+ 	<!-- www.tutiempo.net - Ancho:477px - Alto:91px -->
+ 	<vbox align="rigth" pack="rigth" hflex="1" vflex="1" style="position:relative;margin-left:55%;margin-top:10px"> 
+			<html>
+				<body>
+				<div id="TT_JCTk11k1EzDa8esU7AuzDDzjz6aUMYW2bdEd1ci5KkD5Go3oG" >El tiempo - Tutiempo.net</div>
+					<script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JCTk11k1EzDa8esU7AuzDDzjz6aUMYW2bdEd1ci5KkD5Go3oG">
+					</script>
+				</body>
+			</html>
+</vbox>
+<vbox align="left" pack="left" hflex="1" vflex="1" style="position:relative;margin-left:5px;margin-top:-10%"> 
+			<a href="javascript:window.history.back();">
+				<image sclass="titulo3"  src="/Imagenes/LogoMakr_2KnEDr.png" />
+			</a>	
+			
+			
+</vbox>
+<label value="${sessionScope.userCredential.name}"
+						if="${not sessionScope.userCredential.anonymous}"/>	
+<toolbar sclass="nav_toolbar" >	
+</toolbar>
+</window>
+</zk>

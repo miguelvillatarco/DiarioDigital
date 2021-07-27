@@ -1,0 +1,77 @@
+<?page title="cabecera" contentType="text/html;charset=UTF-8"?>
+<zk>
+<?link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet"?>
+<style>
+ @media screen and (max-width: 3000px) {
+ 	.titulo1{
+		width:300px;
+		height:100px;
+		margin-top:-10px;
+		
+		z-index:0;	
+		font-size: 60px;
+	}	
+}
+
+</style>
+<window   apply="org.zkoss.bind.BindComposer ,usuarios.clsUserListComposer,org.zkoss.essentials.chapter8.LoginController"
+   height="200px">	
+		
+		<!--  <vbox align="left" pack="left" hflex="1" vflex="1" > -->
+		<vbox align="left" pack="left" hflex="1" vflex="1" style="position:relative;margin-left:-10%"> 
+	 	<a href="javascript:window.history.back();">	
+			<image sclass="titulo1" src="/Imagenes/LogoMakr_2KnEDr.png" />
+		</a>	
+		</vbox>
+		
+		<!-- www.tutiempo.net - Ancho:477px - Alto:91px -->
+ 		<vbox align="center" pack="center" hflex="1" vflex="1" style="position:relative;margin-left:35%;margin-top:-110px"> 
+			<html>
+				<body>
+				<div id="TT_JCTk11k1EzDa8esU7AuzDDzjz6aUMYW2bdEd1ci5KkD5Go3oG" >El tiempo - Tutiempo.net</div>
+					<script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JCTk11k1EzDa8esU7AuzDDzjz6aUMYW2bdEd1ci5KkD5Go3oG">
+					</script>
+				</body>
+			</html>
+		</vbox>
+		
+		
+		<vbox align="rigth" hflex="min" style="position:relative;margin-left:75%;margin-top:-155px; margin-bottom:25px">
+					<grid hflex="min">
+						<columns>
+							<column hflex="min" align="right" />
+							<column />
+						</columns>
+						<rows>
+							<row>
+								E-mail :
+								<textbox name="email" constraint="no empty: Ingrese su E-MAIL" id="account" width="200px" />
+							</row>
+							<row>
+								Contraseña :
+								<textbox id="password" type="password"
+									width="200px" />
+							</row>
+						</rows>
+					</grid>
+					<div class="btn-group">
+					<label id="message" sclass="warn" value="&#160;" />
+					<button label="INGRESAR" id="login"  />
+					<button label="SUSCRIBITE" id="register" style="background:#FE2E2E;color: white;"/>
+					</div>
+		</vbox>
+		
+		
+	
+		
+<vbox style="position:relative;margin-top:10px;margin-left:100px">
+</vbox>
+			
+ <toolbar sclass="nav_toolbar" >	
+</toolbar>
+
+
+
+
+</window>
+</zk>

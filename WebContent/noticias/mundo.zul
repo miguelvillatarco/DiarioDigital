@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE project>
+
+
+<?page title="MUNDO" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+<!--  
+  <style>
+
+	.titulo{
+		font-size:30px !important;
+		z-index:1;
+		font-family:'Open Sans Condensed',sans-serif;
+		opacity:0.8;	
+		z-index:9;
+		margin-top:-85px;
+		margin-left:18px;
+		-webkit-text-fill-color: #000000;
+		-webkit-text-stroke: 0.5px black;
+		
+		
+	}
+	.seccion{
+		font-size:15px !important;
+		margin-left:3px;
+		margin-top:3px;
+	}
+	.copete{
+		z-index:1;
+		color:#ff0000;
+		font-family:'Open Sans Condensed',sans-serif;
+		background:#FFFFFF;
+		opacity:0.8;
+		position:absolute;
+		width:50;
+		z-index:6;
+		margin-top:2%;
+		margin-left:-35%;
+		font-size:25px !important;
+		
+		}
+	
+}
+
+</style>-->
+
+<window>
+  <div apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('noticia.clsNoticiaVM2')">
+     <separator/>
+          <a href="/noticias/noticia.zul?p=${param.p}">
+     <grid id="demoGrid" mold="paging" pagingPosition="both" pageSize="10" model="@load(vm.mundo) @template((vm.noticiaSelected and each.editingStatus) ? 'editable' : 'noneditable')">
+          <!--   <columns>
+             <column width="300px" height="300px">Foto</column>
+             <column width="300px" height="300px">Titulo</column>
+             <column width="300px" height="300px">Copete</column>    
+            
+
+            
+         </columns> -->
+    
+       
+          <template name='noneditable'>
+             <row width="350px" height="350px" >
+             	 <a href="/noticias/noticia.zul?p=${each.idnoticia}"> 
+             	<div >
+					       <image src="@load(each.imagen)" style="position:absolute;margin-top:-120px;width:25%;height:10%;"></image>    	
+				  </div>	
+                 <label sclass="titulo"  value="@load(each.titulo)" style="position:absolute;width:57%;font-size:100%;background:#FFFFFF;"/>
+                 <label sclass="copete"   value="@load(each.copete)" style="background:#ffffff;opacity:0.8;position:absolute;margin-left:28%;width:50%;z-index:6;margin-top:-5px;"></label>
+            			<label sclass="fecha" value="@load(each.fecha)" style="position:absolute;margin-left:28%;margin-top:8%;"/>  
+            <!--  	 <button label="VerMás"  href="/noticias/noticia.zul?p=${each.idnoticia}" style="margin-left:160px;"></button>-->
+    	              
+				</a>
+    	              
+              </row>   
+               
+         </template>
+       
+     </grid>
+       </a>
+  </div>
+  <vbox style="position:relative;margin-top:150px;margin-left:10px">
+	
+	</vbox> 
+  </window>
+
+</zk>
+
+
+
+

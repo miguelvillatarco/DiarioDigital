@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE project>
+
+<?page title="Diario Digital Reporte" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+  <div apply="org.zkoss.bind.BindComposer"
+      viewModel="@id('vm')@init('pawZK10A.clsDbUser2')">
+   
+      
+    <vbox style="position:relative;margin-top:50px;margin-left:10px">
+	
+	</vbox> 
+       					
+      <!--
+		 <html>	<h1>	 Haga click en "Ver Reporte"!!!</h1>	</html>
+				<button label="Ver Reporte" onClick="@command('showReport')"  style="position:relative;margin-top:5px;margin-left:550px"/>
+		  --> 		
+	 <grid>
+       		<columns>
+				<column label="Eleccion" width="120px" />
+				<column label="Parametro" />
+				<column label="Boton"/>
+			</columns>
+			<rows>
+			<row>
+					<label value="Reporte por tipo de clasificado" width="150px" />
+					
+						<textbox  value="@bind(each)" constraint=""  width="98%"/>
+					
+					<div>
+						<button label="Ver Reporte" onClick="@command('showReport')"  />
+					</div>
+			</row>
+			<row>
+					<label value="Elige una fecha inicio" width="150px" />
+				
+						<datebox id="fecha_ini" value="@bind(each)" width="50%" format="yyyy-MM-dd" />
+					
+					<label value="Elige una fecha fin" width="150px" />
+				
+						<datebox  id="fecha_fin" value="@bind(each)" width="50%" format="yyyy-MM-dd" />
+					
+					<div>
+						<button label="ReportFecha" onClick="@command('ReportFecha')"  />  
+					</div>
+			</row>
+          </rows>
+     </grid>    
+
+	
+       
+   </div>
+
+</zk>
+
+

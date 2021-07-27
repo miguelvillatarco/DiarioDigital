@@ -1,0 +1,143 @@
+<?page title="DiarioDigital-UltimasNoticias" contentType="text/html;charset=UTF-8"?>
+<zk>
+<?link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet"?>
+<?link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300" rel="stylesheet"?>
+<?link href="../bootstrap-3.3.7/docs/dist/css/bootstrap.min.css" rel="stylesheet"/?>
+<style>
+	.seccion{
+		font-size:18px !important;
+		color:#FF0000;
+		font-family:'Open Sans Condensed',sans-serif;
+		position:relative;
+		width:100%
+	}
+	.tit{
+		margin: 10px;
+		font-size:46px !important;
+		color:#000000;
+
+		font-family:'Open Sans Condensed',sans-serif;
+		position:relative;
+		width:100%"
+		
+	}
+	  .img{
+		align-content: center;
+		position:relative;
+	    width:100%;
+		height:20%;
+	}
+	.epigrafe{
+		margin-top:0px;
+		margin-left:2px
+		margin: 15px;
+		font-size:15px !important;
+		color:#6E6E6E;
+		font-family:'Open Sans Condensed',sans-serif;
+		position:relative;
+		width:100%"
+		
+	}
+	.cop{
+		font-size:25px !important; 
+		color:#BDBDBD;
+		margin-left:3%;
+		font-family:'Open Sans Condensed',sans-serif;
+		position:relative;
+	}
+	.cuerpo{
+		font-size:20px !important;
+		color:#000000;
+		font-family: 'Barlow Semi Condensed', sans-serif;
+		position:relative;
+	}
+
+	.fecha{
+	margin-top:15px;
+		font-size:15px !important;
+		color:#000000;
+		font-family:'Open Sans Condensed',sans-serif;
+		position:relative;
+		width:100%
+	}
+	
+</style>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('modeloNoticias.presNoticias')" >
+
+<include src="/cabecera1.zul"/>
+	
+<vbox style="min-width:700px;position:absolute;width:98%;margin-top:10px;">
+	<label sclass="fecha" value="@load(vm.fecha)" />
+	<label sclass="seccion" value="@load(vm.seccion)" />
+	<vbox align="center" style="position:relative;background:#FFFFFF;margin-left:10%;width:80%">
+    	<label  sclass="tit"  value="@bind(vm.titulo)"/>
+	</vbox> 
+	<vbox align="center" style="position:relative;margin-top:10px;color:#D1CBCB">
+		<vbox  align="center" style="position:relative;width:80%;" >
+			<label sclass="cop" value="@bind(vm.copete)"/>
+	
+			<div align="center" style="position:relative;margin-top:20px;width:85%;height:100%;">
+    			<image sclass="img" src="@load(vm.imagen)"></image>
+    			
+  	 		</div>
+  	 		<div align="left" style="position:relative; width:85%;height:100%;">
+				<label sclass="epigrafe" value="@bind(vm.epigrafe)"/>
+			</div>
+		</vbox>
+		
+    	<hbox style="position:relative;width:70%;margin-top:20px">
+			<label sclass="cuerpo" multiline="true" value="@bind(vm.cuerpo)" />
+		</hbox>
+		<!-- cambios -->
+		<!--  <vbox style="position:relative;margin-top:100px;margin-left:100px">
+
+		</vbox>
+
+		<html>		
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/0SZiGYrDwgM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
+		</html>  -->
+		
+	</vbox>	
+	<vbox style="position:relative;margin-top:50px;margin-left:100px">
+
+	</vbox>
+	
+	 <html>
+ 		<body>
+ 
+			<div class=" fb-root "> </div>
+
+				<script type="text/javascript"><![CDATA[
+					(function(d, s, id) {
+					  var js, fjs = d.getElementsByTagName(s)[0];
+					  if (d.getElementById(id)) return;
+					  js = d.createElement(s); js.id = id;
+					  js.src ="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2";
+					  fjs.parentNode.insertBefore(js, fjs);
+					}(document, 'script', 'facebook-jssdk'));
+		
+				]]></script>
+		
+		
+		<div class="fb-comments" data-href="http://localhost:8080/DiarioDigital/noticias/noticia.zul?p=${param.p}"
+		 data-numposts="15" style="position:relative;margin-top:5%;margin-left:18%"></div>
+	</body>
+</html>
+
+ 
+	
+<!--  
+<a>
+	<label sclass="video" value="@bind(vm.video)"/>
+</a>	-->
+	
+
+<vbox style="position:relative;margin-top:100px;margin-left:100px">
+</vbox>
+	
+</vbox>	
+
+
+	
+</window>
+</zk>

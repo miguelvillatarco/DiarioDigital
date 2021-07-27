@@ -1,0 +1,53 @@
+<?page title="Diario Digital" contentType="text/html;charset=UTF-8"?>
+<zk>
+ <style>    
+
+       
+    	.cabecera{
+    		  margin-top:-65px;
+    		  margin-right:15px;
+    		  
+    	}
+     
+      
+        
+    </style>
+    
+    
+ <window id="main" border="" width="100%"  height="200%" apply="org.zkoss.bind.BindComposer"  
+ viewModel="@id('vm') @init('org.zkoss.essentials.chapter8.clsUser')" >
+ <!--   viewModel="@id('vm') @init('org.zkoss.essentials.chapter8.clsUser')" --> 
+ 	
+ 	
+ 	<div id="cabecera" style="position:relative;margin-top:-60px">
+ 
+           	<include  src="/portada/cabecera.zul"/>
+    </div>
+     <toolbar sclass="nav_toolbar" >	
+	</toolbar>
+ 
+ 		
+	<borderlayout id="mainlayout" >
+	
+	<!--  <north size="5%" border="0" >
+       <borderlayout id="mainlayout1" >
+            <north  border="none">
+                <include src="/menu.zul"/>
+            </north>
+        </borderlayout>
+    </north> -->
+	<center	border="none"  autoscroll="true">
+			
+		    <include id="centerPage" src="/portada/titulos.zul"/>
+		    
+	</center>	
+		
+		
+	</borderlayout>
+
+</window>	  
+	</zk>	  
+	  
+	  
+	  
+	  

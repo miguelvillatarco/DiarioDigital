@@ -1,0 +1,57 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('noticia.clsNoticiaVM2')"  height = "auto" >
+<hbox>
+    <zscript>
+        classes = new String[] {"College", "Graduate" ,"hola"};
+        grades = new Object[] {
+            new String[] {"Best", "Better"}, new String[] {"A++", "A+", "A"}, new String[] {"A++", "A+", "A","kanknaskask"}
+        };
+  
+    </zscript>
+    <grid id="demoGrid" mold="paging" pagingPosition="both" pageSize="10" model="@load(vm.allNoticiaNuevas) @template((vm.noticiaSelected and each.editingStatus) ? 'editable' : 'noneditable')">
+    <listbox width="300px" forEach="hola">
+        <listhead>
+            <listheader value="@load(each.titulo)"  />
+        </listhead>
+        <listitem label="${forEachStatus.each.titulo}: ${each}"
+            forEach="${grades[forEachStatus.index]}" />
+    </listbox>
+    </grid>
+</hbox>
+
+
+<grid id="grid" autopaging="true" mold="paging" vflex="1">
+    <columns>
+        <column label="column1"/>
+    </columns>
+    <rows>
+        <row forEach="${classes}">
+         ${each}
+        </row>
+        <row forEach="${classes}">
+         ${each}
+        </row>
+        <row forEach="${classes}">
+         ${each}
+        </row>
+    </rows>
+</grid>
+<!-- 
+<grid id="grio" autopaging="true" mold="paging" vflex="1">
+    <columns>
+        <column label="column1"/>
+    </columns>
+    <rows>
+        <row forEach="${nota}">
+         ${each}
+        </row>
+        <row forEach="${nota.gettitulo()}">
+         ${each}
+        </row>
+    </rows>
+</grid> -->
+
+</window>
+</zk>

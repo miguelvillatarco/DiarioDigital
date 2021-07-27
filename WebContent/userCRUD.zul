@@ -1,0 +1,96 @@
+<?page title="Usuarios" contentType="text/html;charset=UTF-8"?>
+<zk>
+    <window title="Ingresar Usuario" border="normal" id="crud"
+        width="430px" height="auto" apply="org.zkoss.bind.BindComposer, usuarios.clsUserCrudComposer"
+        minimizable="false" mode="modal" maximizable="false" closable="true" position="center"
+        viewModel="@id('vm') @init('usuarios.clsUserCrudVM')">
+        <separator />
+        <label value="Información del Usuario" />
+        <separator />
+        <panel width="100%">
+            <panelchildren>
+                <separator />
+                <grid width="99.5%">
+                    <columns>
+                        <column label="" width="150px" />
+                        <column label="" />
+                    </columns>
+                    <rows>
+                     <!--<row>
+                            <hbox>
+                                <label value="Id" />
+                            </hbox>
+                            <textbox name="id"
+                                value="@bind(vm.selected.id)" cols="20" />
+                        </row>  -->   
+                        <row>
+                            <hbox>
+                                <label value="Apellido" />
+                            </hbox>
+                            <textbox name="apellido" constraint="no empty: Ingrese apellido"
+                                value="@bind(vm.selected.apellido)" cols="20" />
+                        </row>
+                        <row>
+                            <hbox>
+                                <label value="Nombre" />
+                            </hbox>
+                            <textbox name="nombre" constraint="no empty: Ingrese nombre"
+                                value="@bind(vm.selected.nombre)" cols="20" />
+                        </row>
+                        <row>
+                            <hbox>
+                                <label value="Email" />
+                            </hbox>
+                            <textbox name="email" constraint="no empty: Ingrese E-mail"
+                                value="@bind(vm.selected.email)" cols="20" />
+                        </row>
+
+                        <row>
+                            <hbox>
+                                <label value="Direccion" />
+                            </hbox>
+                            <textbox name="direccion" constraint="no empty: Ingrese direccion"
+                                value="@bind(vm.selected.direccion)" cols="20" />
+                        </row>
+                        
+                        <row>
+                            <hbox>
+                                <label value="Celular" />
+                            </hbox>
+                            <textbox name="celular" constraint="no empty: Ingrese celular"
+                                value="@bind(vm.selected.celular)" cols="20" />
+                        </row>
+                        
+                         <row>
+                            <hbox>
+                                <label value="Password" />
+                            </hbox>
+                            <textbox name="password" type="password" constraint="no empty: Ingrese password"
+                                value="@bind(vm.selected.password)" cols="20" />
+                        </row>
+                        
+                   <row >  
+                   			<hbox>
+                                <label value="Tipo de Usuario" class="boxlabel" />
+                            </hbox>
+			            	<cell>  
+				            	<combobox id="cmbColor" width="150px" readonly="true"
+				                    model="@load(vm.colors)" selectedItem="@bind(vm.shirtColor)">
+				                    <template name="model">
+				                        <comboitem label="@load(each)" />
+				                    </template>
+				                </combobox>
+							</cell>                  
+            		</row>
+            		   					
+                    </rows>
+                </grid>
+            </panelchildren>
+        </panel>
+        <separator />
+        <div align="center">
+            <button id="submit" label="Enviar" onClick="@command('save')" />
+            <button id="cancel" label="Cancelar" /> <!-- onClick="@command('closeThis')" -->
+        </div>
+    </window>
+</zk>

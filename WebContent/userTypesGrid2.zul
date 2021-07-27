@@ -1,0 +1,42 @@
+<!-- protect page by the authentication init  -->
+<?init class="org.zkoss.essentials.chapter8.AuthenticationInit"?>
+<!-- authentication init have to locate before composition -->
+<?page title="PAW 2017 Example 6" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+   
+    <window title="User Type List" border="normal"
+        apply="org.zkoss.bind.BindComposer, codigo.clsUserTypeListComposer" viewModel="@id('vm') @init('codigo.clsUserTypeVM2')">
+        <div>
+            <button label="Add" id="add" image="/img/add.png" width="80px" height="35px"/>
+        </div>
+        <separator />
+		<!--  <div sclass="contenido">   -->
+        <listbox id="userTypeLB" model="@load(vm.allUserTypes)"
+            selectedItem="@bind(vm.userTypeSelected)">
+            <listhead sizable="true">
+                <listheader label="ID" width="100px" sort="auto(id)" />
+                <listheader label="User Type" width="200px" sort="auto(userType)" />
+                <listheader label="Description" width="700px" sort="auto(description)" />
+                <listheader label="Actions" />
+            </listhead>
+            <template name="model" var="element">
+                <listitem>
+                    <listcell label="@load(element.id)" />
+                    <listcell label="@load(element.userType)" />
+                    <listcell label="@load(element.description)" />
+                    <listcell>
+                        <hbox spacing="15px">
+                            <image sclass="imageDelete"
+                                onClick="@command('delete')" />
+                            <image sclass="imageEdit"
+                                onClick="@command('edit')" />
+                        </hbox>
+                    </listcell>
+                </listitem>
+            </template>
+        </listbox>
+       </window>
+      <!--  </div>  -->
+       
+</zk>
